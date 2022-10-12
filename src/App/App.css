@@ -1,0 +1,24 @@
+.App {
+  padding: 20px 30px;
+}
+
+.App-header {
+  align-items: flex-start;
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 17px;
+}
+
+.App-header-title {
+  margin-right: 20px;
+}
+
+.App-container {
+  background-color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  font-size: 15px;
+  color: black;
+}

@@ -1,0 +1,274 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App component render with default state DATE 1`] = `
+<div
+  className="App"
+>
+  <header
+    className="App-header"
+  >
+    <span
+      className="App-header-title"
+    >
+      Сортировать заказы
+    </span>
+    <select
+      onChange={[Function]}
+      value="date"
+    >
+      <option
+        value="count"
+      >
+        по количеству товаров
+      </option>
+      <option
+        value="date"
+      >
+        по дате
+      </option>
+    </select>
+  </header>
+  <div
+    className="App-container"
+  >
+    <OrderComponent
+      key="0"
+      order={
+        Object {
+          "date": 1652585550000,
+          "id": 126,
+          "items": Array [
+            "Ноутбук Apple MacBook Air 13.3\\" (MQD32RU/A)",
+            "Игровая приставка Sony PlayStation 4 Pro 1TB Black (CUH-7208B)",
+          ],
+          "shop": "Эльдоградо",
+        }
+      }
+    />
+    <OrderComponent
+      key="1"
+      order={
+        Object {
+          "date": 1652481120000,
+          "id": 124,
+          "items": Array [
+            "Жакет - BOREAL5",
+            "Miss Gabby Костюм",
+            "Ostin перчатки мужские",
+            "Zara худи роз.",
+          ],
+          "shop": "Lamodник.ru",
+        }
+      }
+    />
+    <OrderComponent
+      key="2"
+      order={
+        Object {
+          "date": 1588359900000,
+          "id": 100,
+          "items": Array [],
+          "shop": "Сбереги Мега Маркер",
+        }
+      }
+    />
+    <OrderComponent
+      key="3"
+      order={
+        Object {
+          "date": 1544356800000,
+          "id": 123,
+          "items": Array [
+            "Утиный пластмасса для показ новый год",
+            "Курица из нержавеющей стали, утка, гусь, голубь, питьевой фонтан",
+            "Новый стиль один розница яйцо для упаковки форма латекс",
+          ],
+          "shop": "Alihandro Express",
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`App component should render sorted by count 1`] = `
+<div
+  className="App"
+>
+  <header
+    className="App-header"
+  >
+    <span
+      className="App-header-title"
+    >
+      Сортировать заказы
+    </span>
+    <select
+      onChange={[Function]}
+      value="count"
+    >
+      <option
+        value="count"
+      >
+        по количеству товаров
+      </option>
+      <option
+        value="date"
+      >
+        по дате
+      </option>
+    </select>
+  </header>
+  <div
+    className="App-container"
+  >
+    <OrderComponent
+      key="0"
+      order={
+        Object {
+          "date": 1588359900000,
+          "id": 100,
+          "items": Array [],
+          "shop": "Сбереги Мега Маркер",
+        }
+      }
+    />
+    <OrderComponent
+      key="1"
+      order={
+        Object {
+          "date": 1652585550000,
+          "id": 126,
+          "items": Array [
+            "Ноутбук Apple MacBook Air 13.3\\" (MQD32RU/A)",
+            "Игровая приставка Sony PlayStation 4 Pro 1TB Black (CUH-7208B)",
+          ],
+          "shop": "Эльдоградо",
+        }
+      }
+    />
+    <OrderComponent
+      key="2"
+      order={
+        Object {
+          "date": 1544356800000,
+          "id": 123,
+          "items": Array [
+            "Утиный пластмасса для показ новый год",
+            "Курица из нержавеющей стали, утка, гусь, голубь, питьевой фонтан",
+            "Новый стиль один розница яйцо для упаковки форма латекс",
+          ],
+          "shop": "Alihandro Express",
+        }
+      }
+    />
+    <OrderComponent
+      key="3"
+      order={
+        Object {
+          "date": 1652481120000,
+          "id": 124,
+          "items": Array [
+            "Жакет - BOREAL5",
+            "Miss Gabby Костюм",
+            "Ostin перчатки мужские",
+            "Zara худи роз.",
+          ],
+          "shop": "Lamodник.ru",
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`App component should render sorted by date after reselect 1`] = `
+<div
+  className="App"
+>
+  <header
+    className="App-header"
+  >
+    <span
+      className="App-header-title"
+    >
+      Сортировать заказы
+    </span>
+    <select
+      onChange={[Function]}
+      value="date"
+    >
+      <option
+        value="count"
+      >
+        по количеству товаров
+      </option>
+      <option
+        value="date"
+      >
+        по дате
+      </option>
+    </select>
+  </header>
+  <div
+    className="App-container"
+  >
+    <OrderComponent
+      key="0"
+      order={
+        Object {
+          "date": 1652585550000,
+          "id": 126,
+          "items": Array [
+            "Ноутбук Apple MacBook Air 13.3\\" (MQD32RU/A)",
+            "Игровая приставка Sony PlayStation 4 Pro 1TB Black (CUH-7208B)",
+          ],
+          "shop": "Эльдоградо",
+        }
+      }
+    />
+    <OrderComponent
+      key="1"
+      order={
+        Object {
+          "date": 1652481120000,
+          "id": 124,
+          "items": Array [
+            "Жакет - BOREAL5",
+            "Miss Gabby Костюм",
+            "Ostin перчатки мужские",
+            "Zara худи роз.",
+          ],
+          "shop": "Lamodник.ru",
+        }
+      }
+    />
+    <OrderComponent
+      key="2"
+      order={
+        Object {
+          "date": 1588359900000,
+          "id": 100,
+          "items": Array [],
+          "shop": "Сбереги Мега Маркер",
+        }
+      }
+    />
+    <OrderComponent
+      key="3"
+      order={
+        Object {
+          "date": 1544356800000,
+          "id": 123,
+          "items": Array [
+            "Утиный пластмасса для показ новый год",
+            "Курица из нержавеющей стали, утка, гусь, голубь, питьевой фонтан",
+            "Новый стиль один розница яйцо для упаковки форма латекс",
+          ],
+          "shop": "Alihandro Express",
+        }
+      }
+    />
+  </div>
+</div>
+`;
