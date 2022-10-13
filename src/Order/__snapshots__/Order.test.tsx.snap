@@ -70,31 +70,3 @@ exports[`Order.tsx Test filled order 1`] = `
   </div>
 </div>
 `;
-
-exports[`Order.tsx Test order with empty items 1`] = `
-<div
-  className="Order"
->
-  <div
-    className="Order-header"
-  >
-    <span
-      className="Order-shop"
-    >
-      Shop
-    </span>
-    <span
-      id="date"
-    >
-      13 октября, чт, 2022 год
-    </span>
-  </div>
-  <div
-    className="Order-items"
-  >
-    <div>
-      Заказ пуст...
-    </div>
-  </div>
-</div>
-`;
