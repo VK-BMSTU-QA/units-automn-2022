@@ -31,7 +31,7 @@ export const sortOrders = (
  * @returns {sortByItemCount|sortByDate}
  */
 type sortFuncType = (order1: Order, order2: Order) => number;
-export const getSortFunction = (sortType: typeof sortTypes.COUNT | typeof sortTypes.DATE): sortFuncType | null => {
+export const getSortFunction = (sortType?: typeof sortTypes.COUNT | typeof sortTypes.DATE): sortFuncType | null => {
 	switch(sortType) {
 	case sortTypes.DATE:
 		return sortByDate;
@@ -49,7 +49,7 @@ export const getSortFunction = (sortType: typeof sortTypes.COUNT | typeof sortTy
  * @param order1
  * @param order2
  */
-export const sortByItemCount = (order1: Order, order2: Order): number => {
+export const sortByItemCount = (order1?: Order, order2?: Order): number => {
 	if (!order1 || !order2) {
 		return 0;
 	}
@@ -78,7 +78,7 @@ export const sortByItemCount = (order1: Order, order2: Order): number => {
  * @param order1
  * @param order2
  */
-export const sortByDate = (order1: Order, order2: Order): number => {
+export const sortByDate = (order1?: Order, order2?: Order): number => {
 	if (!order1 || !order2) {
 		return 0;
 	}
