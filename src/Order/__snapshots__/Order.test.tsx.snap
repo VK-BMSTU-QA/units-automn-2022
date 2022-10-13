@@ -1,159 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`OrderComponent function !order.items 1`] = `
-<div
-  className="Order"
->
-  <div
-    className="Order-header"
-  >
-    <span
-      className="Order-shop"
-    >
-      test
-    </span>
-    <span
-      id="date"
-    >
-      test date
-    </span>
-  </div>
-  <div
-    className="Order-items"
-  >
-    <div>
-      Заказ пуст...
-    </div>
-  </div>
-</div>
-`;
-
-exports[`OrderComponent function ok 1`] = `
-<div
-  className="Order"
->
-  <div
-    className="Order-header"
-  >
-    <span
-      className="Order-shop"
-    >
-      test
-    </span>
-    <span
-      id="date"
-    >
-      test date
-    </span>
-  </div>
-  <div
-    className="Order-items"
-  >
-    <div
-      className="Order-item"
-      key="0"
-    >
-      test
-    </div>
-    <div
-      className="Order-item"
-      key="1"
-    >
-      test
-    </div>
-    <div
-      className="Order-item"
-      key="2"
-    >
-      test
-    </div>
-    <div
-      className="Order-item"
-      key="3"
-    >
-      test
-    </div>
-  </div>
-</div>
-`;
-
-exports[`OrderComponent functions !order.items 1`] = `
-<div
-  className="Order"
->
-  <div
-    className="Order-header"
-  >
-    <span
-      className="Order-shop"
-    >
-      test
-    </span>
-    <span
-      id="date"
-    >
-      test date
-    </span>
-  </div>
-  <div
-    className="Order-items"
-  >
-    <div>
-      Заказ пуст...
-    </div>
-  </div>
-</div>
-`;
-
-exports[`OrderComponent functions ok 1`] = `
-<div
-  className="Order"
->
-  <div
-    className="Order-header"
-  >
-    <span
-      className="Order-shop"
-    >
-      test
-    </span>
-    <span
-      id="date"
-    >
-      test date
-    </span>
-  </div>
-  <div
-    className="Order-items"
-  >
-    <div
-      className="Order-item"
-      key="0"
-    >
-      test
-    </div>
-    <div
-      className="Order-item"
-      key="1"
-    >
-      test
-    </div>
-    <div
-      className="Order-item"
-      key="2"
-    >
-      test
-    </div>
-    <div
-      className="Order-item"
-      key="3"
-    >
-      test
-    </div>
-  </div>
-</div>
-`;
-
 exports[`OrderComponent functions positive test 1`] = `
 <div
   className="Order"
@@ -198,6 +44,34 @@ exports[`OrderComponent functions positive test 1`] = `
       key="3"
     >
       test
+    </div>
+  </div>
+</div>
+`;
+
+exports[`OrderComponent functions should expect no order.items 1`] = `
+<div
+  className="Order"
+>
+  <div
+    className="Order-header"
+  >
+    <span
+      className="Order-shop"
+    >
+      test
+    </span>
+    <span
+      id="date"
+    >
+      test date
+    </span>
+  </div>
+  <div
+    className="Order-items"
+  >
+    <div>
+      Заказ пуст...
     </div>
   </div>
 </div>
