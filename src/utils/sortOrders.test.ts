@@ -29,8 +29,8 @@ describe('sortByItemCount function', () => {
 	test.each([
 		[{}, { items: ['item-2-1'] }],
 		[{ items: ['item-1-1'] }, {}],
-		[undefined, { items: ['item-2-1'] }],
-		[{ items: ['item-1-1'] }, undefined],
+		[undefined!, { items: ['item-2-1'] }],
+		[{ items: ['item-1-1'] }, undefined!],
 	])('should return 0 when some of orders is empty structure or undefined', (order1, order2) => {
 		expect(sortByItemCount(order1, order2)).toBe(0);
 	});
@@ -58,8 +58,8 @@ describe('sortByDate function', () => {
 	test.each([
 		[{}, { date: 1 }],
 		[{ date: 1 }, {}],
-		[undefined, { date: 1 }],
-		[{ date: 1 }, undefined],
+		[undefined!, { date: 1 }],
+		[{ date: 1 }, undefined!],
 	])('should return 0 when some of orders is empty structure or undefined', (order1, order2) => {
 		expect(sortByDate(order1, order2)).toBe(0);
 	});
