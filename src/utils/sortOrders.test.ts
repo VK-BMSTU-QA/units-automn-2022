@@ -14,7 +14,7 @@ describe('sortByItemCount function', () => {
 		[{ items: [] }, { items: ['1-1'] }],
 		[{ items: ['1-1'] }, { items: ['2-1', '2-2'] }],
 		[{ items: ['1-1', '1-2'] }, { items: ['2-1', '2-2', '2-3'] }],
-	])('should return (-1) when the number of items in the first order is less than in the second order', (order1, order2) => {
+	])('should return (-1) when the number of items in the first order is less than in the second', (order1, order2) => {
 		expect(sortByItemCount(order1, order2)).toBe(-1);
 	});
 
@@ -22,7 +22,7 @@ describe('sortByItemCount function', () => {
 		[{ items: ['1-1'] }, { items: [] }],
 		[{ items: ['1-1', '1-2'] }, { items: ['2-1'] }],
 		[{ items: ['1-1', '1-2', '1-3'] }, { items: ['2-1', '2-2'] }],
-	])('should return (1) when the number of items in the first order is greater than in the second order', (order1, order2) => {
+	])('should return (1) when the number of items in the first order is greater than in the second', (order1, order2) => {
 		expect(sortByItemCount(order1, order2)).toBe(1);
 	});
 
