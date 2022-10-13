@@ -24,22 +24,11 @@ describe('sortByItemCount function', () => {
 		expect(sortByItemCount(first, second)).toBe(expected);
 	});
 
-	it('sort orders, where first order has less items', () => {
-		const first = {items: ['1', '2']};
-		const second = {items: ['item1', 'item2', 'item3']};
-
-		const result = sortByItemCount(first, second);
-
-		expect(result).toBe(-1);
-	});
-
-	it('sort orders, where second order has less items', () => {
-		const first = {items: ['1', '2', '3']};
-		const second = {items: ['item1', 'item2']};
-
-		const result = sortByItemCount(first, second);
-
-		expect(result).toBe(1);
+	test.each([
+		{first: {items: ['1', '2']}, second: {items: ['item1', 'item2', 'item3']}, expected: -1},
+		{first: {items: ['1', '2', '3']}, second: {items: ['item1', 'item2']}, expected: 1},
+	])('sort orders, where one of orders has less items then other', ({first, second, expected}) => {
+		expect(sortByItemCount(first, second)).toBe(expected);
 	});
 
 	it('sort empty orders', () => {
@@ -62,22 +51,11 @@ describe('sortByDate function', () => {
 		expect(result).toBe(0);
 	});
 
-	it('sort orders, where first order has later date', () => {
-		const first = {date: 1588359900001};
-		const second = {date: 1588359900000};
-
-		const result = sortByDate(first, second);
-
-		expect(result).toBe(-1);
-	});
-
-	it('sort orders, where second order has later date', () => {
-		const first = {date: 1588359900000};
-		const second = {date: 1588369900001};
-
-		const result = sortByDate(first, second);
-
-		expect(result).toBe(1);
+	test.each([
+		{first: {date: 1588359900000}, second: {date: 1588369900001}, expected: 1},
+		{first: {date: 1588369900001}, second: {date: 1588359900000}, expected: -1},
+	])('sort orders, where one of orders has has later date', ({first, second, expected}) => {
+		expect(sortByDate(first, second)).toBe(expected);
 	});
 
 	test.each([
@@ -88,7 +66,7 @@ describe('sortByDate function', () => {
 		expect(sortByDate(first, second)).toBe(expected);
 	});
 
-	it('sort empty orders', () => {
+	it('empty orders', () => {
 		const first = {};
 		const second = {};
 
