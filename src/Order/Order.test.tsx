@@ -16,7 +16,7 @@ describe('OrderComponent functions', () => {
 		jest.clearAllMocks();
 	});
 
-	it('empty order', () => {
+	it('should expect empty order', () => {
 		const testOrder = {};
 		const wrapper = shallow(<OrderComponent order={testOrder}/>);
 		expect(wrapper.getElement()).toBeNull();
@@ -30,7 +30,7 @@ describe('OrderComponent functions', () => {
 		expect(wrapper.getElement()).toBeNull();
 	});
 
-	it('!order.items', () => {
+	it('should expect no order.items', () => {
 		const testOrder = {
 			id: 1,
 			date: 13102022,
