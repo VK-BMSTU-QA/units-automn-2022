@@ -15,7 +15,7 @@ exports[`Order.tsx render order with items 1`] = `
     <span
       id="date"
     >
-      17 марта, чт, 2022 год
+      13 окт, чт, 2022 год
     </span>
   </div>
   <div
@@ -58,7 +58,7 @@ exports[`Order.tsx render order without items 1`] = `
     <span
       id="date"
     >
-      17 марта, чт, 2022 год
+      13 окт, чт, 2022 год
     </span>
   </div>
   <div

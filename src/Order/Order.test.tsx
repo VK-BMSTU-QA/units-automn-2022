@@ -12,7 +12,7 @@ configure({ adapter: new Adapter() });
 
 describe('Order.tsx', () => {
 	beforeEach(() => {
-		(getDate as jest.Mock).mockReturnValue('17 марта, чт, 2022 год');
+		(getDate as jest.Mock).mockReturnValue('13 окт, чт, 2022 год');
 	});
 
 	afterEach(() => {
