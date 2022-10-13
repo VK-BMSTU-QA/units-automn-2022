@@ -11,46 +11,46 @@ import { OrderComponent } from './Order';
 configure({ adapter: new Adapter() });
 
 describe('Order.tsx', () => {
-    beforeEach(() => {
-        (getDate as jest.Mock).mockReturnValue('17 марта, чт, 2022 год');
-    });
+	beforeEach(() => {
+		(getDate as jest.Mock).mockReturnValue('17 марта, чт, 2022 год');
+	});
 
-    afterEach(() => {
-        jest.clearAllMocks();
-    });
+	afterEach(() => {
+		jest.clearAllMocks();
+	});
 
-    it('render order without items', () => {
-        const order = fakeOrders[0];
-        const wrapper = shallow(<OrderComponent order={order} />);
+	it('render order without items', () => {
+		const order = fakeOrders[0];
+		const wrapper = shallow(<OrderComponent order={order} />);
 
-        expect(wrapper).toMatchSnapshot();
-        expect(getDate).toBeCalled();
-    });
+		expect(wrapper).toMatchSnapshot();
+		expect(getDate).toBeCalled();
+	});
 
-    it('render order with items', () => {
-        const order = fakeOrders[1];
-        const wrapper = shallow(<OrderComponent order={order} />);
+	it('render order with items', () => {
+		const order = fakeOrders[1];
+		const wrapper = shallow(<OrderComponent order={order} />);
 
-        expect(wrapper).toMatchSnapshot();
-        expect(getDate).toBeCalled();
-    });
+		expect(wrapper).toMatchSnapshot();
+		expect(getDate).toBeCalled();
+	});
 
-    test.each([
-        {
-            id: 0,
-            date: 5,
-            shop: undefined,
-            items: []
-        },
-        {
-            id: 0,
-            date: undefined,
-            shop: 'sem 17.03',
-            items: []
-        },
-    ])('Проверка невалидного компонента OrderComponent({order: %s})', (order) => {
-        const wrapper = shallow(<OrderComponent order={order} />);
+	test.each([
+		{
+			id: 0,
+			date: 5,
+			shop: undefined,
+			items: []
+		},
+		{
+			id: 0,
+			date: undefined,
+			shop: 'sem 17.03',
+			items: []
+		},
+	])('Проверка невалидного компонента OrderComponent({order: %s})', (order) => {
+		const wrapper = shallow(<OrderComponent order={order} />);
 
-        expect(wrapper.find('.Order')).toHaveLength(0);
-    });
+		expect(wrapper.find('.Order')).toHaveLength(0);
+	});
 });
