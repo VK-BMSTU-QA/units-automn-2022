@@ -16,6 +16,14 @@ describe('sortByItemCount function', () => {
 	])('orders without items', ({order1, order2, expected}) => {
 		expect(sortByItemCount(order1, order2)).toBe(expected);
 	});
+
+	test.each([
+		{order1: null!, order2: {items: ['1', '2', '3']}, expected: 0},
+		{order1: {items: ['1', '2', '3']}, order2: null!, expected: 0},
+		{order1: null!, order2: null!, expected: 0},
+	])('null orders', ({order1, order2, expected}) => {
+		expect(sortByItemCount(order1, order2)).toBe(expected);
+	});
 });
 
 describe('sortByDate function', () => {
@@ -30,9 +38,17 @@ describe('sortByDate function', () => {
 
 	test.each([
 		{order1: {date: 13102022}, order2: {date: undefined}, expected: 0},
-		{order1: {date: undefined}, order2: {date: 11102022}, expected: 0},
+		{order1: {date: undefined}, order2: {date: 13102022}, expected: 0},
 		{order1: {date: undefined}, order2: {date: undefined}, expected: 0},
 	])('orders without dates', ({order1, order2, expected}) => {
+		expect(sortByDate(order1, order2)).toBe(expected);
+	});
+
+	test.each([
+		{order1: null!, order2: {date: 13102022}, expected: 0},
+		{order1: {date: 13102022}, order2: null!, expected: 0},
+		{order1: null!, order2: null!, expected: 0},
+	])('null orders', ({order1, order2, expected}) => {
 		expect(sortByDate(order1, order2)).toBe(expected);
 	});
 });
