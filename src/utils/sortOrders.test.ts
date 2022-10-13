@@ -123,21 +123,21 @@ describe('sortByDate function', () => {
 
 describe('getSortFunction function', () => {
 	it('COUNT sort type', () => {
-		const sortType = sortTypes.COUNT
+		const sortType = sortTypes.COUNT;
 
 		const result = getSortFunction(sortType);
 
 		expect(result).toBe(sortByItemCount);
 	});
 	it('DATE sort type', () => {
-		const sortType = sortTypes.DATE
+		const sortType = sortTypes.DATE;
 
 		const result = getSortFunction(sortType);
 
 		expect(result).toBe(sortByDate);
 	});
 	it('bad sort type', () => {
-		const sortType = null
+		const sortType = null;
 
 		const result = getSortFunction(sortType);
 

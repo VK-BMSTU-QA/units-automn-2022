@@ -1,5 +1,5 @@
 import React from 'react';
-import {getSortFunction} from "../utils/sortOrders";
+import {getSortFunction} from '../utils/sortOrders';
 import {shallow} from 'enzyme';
 import {configure} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
@@ -39,7 +39,7 @@ describe('Order.tsx', () => {
 
 	it('ok', () => {
 		const testDate = new Date(2022, 10, 13).getTime();
-		const testItems = ['1', '2', '3']
+		const testItems = ['1', '2', '3'];
 		const order = {
 			date: testDate,
 			shop: 'shop',
