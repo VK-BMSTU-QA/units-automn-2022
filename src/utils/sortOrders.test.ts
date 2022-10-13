@@ -42,8 +42,8 @@ describe('getSortFunction function', () => {
 		{sortType: 'date', expected: sortByDate},
 		{sortType: 'count', expected: sortByItemCount}
 	])('Get sort funcs', ({sortType, expected}) =>{
-		expect(getSortFunction(sortType)).toBe(expected)
-	})
+		expect(getSortFunction(sortType)).toBe(expected);
+	});
 
 	it('null', () => {
 		const sortType = '';
