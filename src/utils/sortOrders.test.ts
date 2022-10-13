@@ -6,13 +6,10 @@ describe('sortByItemCount function', () => {
 		const order1 = {
 			items: ['item1', 'item2'],
 		};
-
 		const order2 = {
 			items: ['1', '2'],
 		};
-
 		const result = sortByItemCount(order1, order2);
-
 		expect(result).toBe(0);
 	});
 });
@@ -22,13 +19,10 @@ describe('sortByDate function', () => {
 		const order1 = {
 			date: 1,
 		};
-
 		const order2 = {
 			date: 1,
 		};
-
 		const result = sortByDate(order1, order2);
-
 		expect(result).toBe(0);
 	});
 
@@ -36,13 +30,10 @@ describe('sortByDate function', () => {
 		const order1 = {
 			date: 1,
 		};
-
 		const order2 = {
 			date: 2,
 		};
-
 		const result = sortByDate(order1, order2);
-
 		expect(result).toBe(1);
 	});
 });
@@ -50,9 +41,7 @@ describe('sortByDate function', () => {
 describe('sortOrders function', () => {
 	it('empty array', () => {
 		const orders: Order[] = [];
-
-		const result = sortOrders(orders, sortByDate);
-
+		sortOrders(orders, sortByDate);
 		expect(orders).toEqual([]);
 	});
 
@@ -68,9 +57,7 @@ describe('sortOrders function', () => {
 				date: 3,
 			}
 		];
-
-		const result = sortOrders(orders, sortByDate);
-
+		sortOrders(orders, sortByDate);
 		expect(orders).toEqual([
 			{
 				date: 3,
@@ -96,9 +83,7 @@ describe('sortOrders function', () => {
 				items: ['item1', 'item2', 'item3'],
 			}
 		];
-
-		const result = sortOrders(orders, sortByItemCount);
-
+		sortOrders(orders, sortByItemCount);
 		expect(orders).toEqual([
 			{
 				items: ['1'],
@@ -118,9 +103,7 @@ describe('sortOrders function', () => {
 			{},
 			{}
 		];
-
-		const result = sortOrders(orders, sortByDate);
-
+		sortOrders(orders, sortByDate);
 		expect(orders).toEqual([
 			{},
 			{},
@@ -134,9 +117,7 @@ describe('sortOrders function', () => {
 			null,
 			null
 		];
-
-		const result = sortOrders(orders, sortByDate);
-
+		sortOrders(orders, sortByDate);
 		expect(orders).toEqual([
 			null,
 			null,
