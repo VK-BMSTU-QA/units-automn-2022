@@ -49,7 +49,7 @@ export const getSortFunction = (sortType: typeof sortTypes.COUNT | typeof sortTy
  * @param order1
  * @param order2
  */
-export const sortByItemCount = (order1: Order, order2: Order): number => {
+export const sortByItemCount = (order1: Order, order2?: Order): number => {
 	if (!order1 || !order2) {
 		return 0;
 	}
