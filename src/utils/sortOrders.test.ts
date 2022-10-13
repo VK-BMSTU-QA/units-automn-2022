@@ -78,34 +78,37 @@ describe('sortByDate function', () => {
 });
 
 describe('getSortFunction function', () => {
-	it('sort by count', () => {
+	it('should return sortByItemCount()', () => {
 		expect(getSortFunction(sortTypes.COUNT)).toBe(sortByItemCount);
 	});
-	it('sort by date', () => {
+	it('should return sortByDate()', () => {
 		expect(getSortFunction(sortTypes.DATE)).toBe(sortByDate);
 	});
-	it('not date or count sort', () => {
+	it('should return null when requested not sort-by-date or sort-by-item-count', () => {
 		expect(getSortFunction('notCountAndNoteDate')).toBeNull();
 	});
 });
 
 describe('sortOrders function', () => {
 	it('should call sortFunction when orders is not empty', () => {
-		const orders: Order[] = [{},{}];
-		const mockFunc = jest.fn();
-		expect(() => {
-			sortOrders(orders, mockFunc);
-		}).not.toThrow();
-		expect(mockFunc).toBeCalled();
+		const orders: Order[] = [{}, {}];
+		const mockSortFunc = jest.fn();
+		sortOrders(orders, mockSortFunc);
+		expect(mockSortFunc).toBeCalled();
 	});
 
 	it('should not call sortFunction when orders is empty or undefiened', () => {
 		const orders: Order[] = [];
-		const mockFunc = jest.fn();
-		expect(() => {
-			sortOrders(orders, mockFunc);
-		}).not.toThrow();
-		expect(orders).toEqual([] as Order[]);
-		expect(mockFunc).not.toBeCalled();
+		const mockSortFunc = jest.fn();
+		sortOrders(orders, mockSortFunc);
+		expect(mockSortFunc).not.toBeCalled();
+	});
+	test.each([
+		[[] as Order[]],
+		[undefined],
+	])('should not call sortFunction when orders is empty or undefiened', (orders) => {
+		const mockSortFunc = jest.fn();
+		sortOrders(orders, mockSortFunc);
+		expect(mockSortFunc).not.toBeCalled();
 	});
 });
