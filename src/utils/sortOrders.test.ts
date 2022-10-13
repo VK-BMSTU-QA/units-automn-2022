@@ -113,10 +113,10 @@ describe('sortOrders function', () => {
 		expect(orders).toBe(undefined);
 	});
 
-	let sortF = jest.fn(); 
+	const sortF = jest.fn(); 
 	test.each([
 		[fakeOrders, sortF]])('valid orders', (orders, sortFunction) => {
-			const result = sortOrders(orders, sortFunction);
+		const result = sortOrders(orders, sortFunction);
 		expect(sortF).toBeCalled();
 	});
 });
