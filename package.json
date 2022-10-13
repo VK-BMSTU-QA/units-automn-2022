@@ -15,7 +15,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "lint": "eslint ./src --quiet --fix",
+    "lint": "eslint ./src --quiet",
     "test": "react-scripts test --watchAll=false",
     "test-coverage": "npm test -- --coverage",
     "test-update-snap": "npm test -- --updateSnapshot",
