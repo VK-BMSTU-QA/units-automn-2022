@@ -3,34 +3,34 @@ import { Order } from '../data/fakeOrders';
 
 describe('sortByItemCount function', () => {
 	test.each([
-		[{ items: ['item-1-1', 'item-1-2'] }, { items: ['item-2-1', 'item-2-2'] }, 0],
-		[{ items: ['item-1'] }, { items: ['item-2'] }, 0],
+		[{ items: ['1-1', '1-2'] }, { items: ['2-1', '2-2'] }, 0],
+		[{ items: ['1'] }, { items: ['2'] }, 0],
 		[{ items: [] }, { items: [] }, 0],
 	])('should return 0 when the number of items is same', (order1, order2, expectedRes) => {
 		expect(sortByItemCount(order1, order2)).toBe(expectedRes);
 	});
 
 	test.each([
-		[{ items: [] }, { items: ['item-1-1'] }],
-		[{ items: ['item-1-1'] }, { items: ['item-2-1', 'item-2-2'] }],
-		[{ items: ['item-1-1', 'item-1-2'] }, { items: ['item-2-1', 'item-2-2', 'item-2-3'] }],
+		[{ items: [] }, { items: ['1-1'] }],
+		[{ items: ['1-1'] }, { items: ['2-1', '2-2'] }],
+		[{ items: ['1-1', '1-2'] }, { items: ['2-1', '2-2', '2-3'] }],
 	])('should return (-1) when the number of items in the first order is less than in the second order', (order1, order2) => {
 		expect(sortByItemCount(order1, order2)).toBe(-1);
 	});
 
 	test.each([
-		[{ items: ['item-1-1'] }, { items: [] }],
-		[{ items: ['item-1-1', 'item-1-2'] }, { items: ['item-2-1'] }],
-		[{ items: ['item-1-1', 'item-1-2', 'item-1-3'] }, { items: ['item-2-1', 'item-2-2'] }],
+		[{ items: ['1-1'] }, { items: [] }],
+		[{ items: ['1-1', '1-2'] }, { items: ['2-1'] }],
+		[{ items: ['1-1', '1-2', '1-3'] }, { items: ['2-1', '2-2'] }],
 	])('should return (1) when the number of items in the first order is greater than in the second order', (order1, order2) => {
 		expect(sortByItemCount(order1, order2)).toBe(1);
 	});
 
 	test.each([
-		[{}, { items: ['item-2-1'] }],
-		[{ items: ['item-1-1'] }, {}],
-		[undefined!, { items: ['item-2-1'] }],
-		[{ items: ['item-1-1'] }, undefined!],
+		[{}, { items: ['2-1'] }],
+		[{ items: ['1-1'] }, {}],
+		[undefined!, { items: ['2-1'] }],
+		[{ items: ['1-1'] }, undefined!],
 	])('should return 0 when some of orders is empty structure or undefined', (order1, order2) => {
 		expect(sortByItemCount(order1, order2)).toBe(0);
 	});
@@ -72,7 +72,7 @@ describe('getSortFunction function', () => {
 	it('should return sortByDate()', () => {
 		expect(getSortFunction(sortTypes.DATE)).toBe(sortByDate);
 	});
-	it('should return null when requested not sort-by-date or sort-by-item-count', () => {
+	it('should return null when requested not sort-by-date or sort-by-count', () => {
 		expect(getSortFunction('notCountAndNoteDate')).toBeNull();
 	});
 });
