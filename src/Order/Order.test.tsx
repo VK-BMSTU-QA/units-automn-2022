@@ -19,7 +19,7 @@ describe('Order.tsx', () => {
 
 	it('Test null order', () => {
 		const order = null;
-		const wrapper = shallow(<OrderComponent order={order!} />)
+		const wrapper = shallow(<OrderComponent order={order!} />);
 		expect(wrapper.getElement()).toBeNull();
 	});
 
@@ -28,19 +28,19 @@ describe('Order.tsx', () => {
 			id: 1,
 			items: ['1', '2'],
 		};
-		const wrapper = shallow(<OrderComponent order={order} />)
+		const wrapper = shallow(<OrderComponent order={order} />);
 		expect(wrapper.getElement()).toBeNull();
 	});
 
 	it('Test empty order', () => {
 		const order = fakeOrders[0];
-		const wrapper = shallow(<OrderComponent order={order} />)
+		const wrapper = shallow(<OrderComponent order={order} />);
 		expect(wrapper).toMatchSnapshot();
 	});
 
 	it('Test filled order', () => {
 		const order = fakeOrders[1];
-		const wrapper = shallow(<OrderComponent order={order} />)
+		const wrapper = shallow(<OrderComponent order={order} />);
 		expect(wrapper).toMatchSnapshot();
 	});
 });
