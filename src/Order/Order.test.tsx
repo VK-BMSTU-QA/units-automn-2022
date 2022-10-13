@@ -24,16 +24,15 @@ describe('Order.tsx', () => {
 		expect(wrapper.getElement()).toBeNull();
 	});
 
-
 	test.each([
 		{order: {id: 1, date: 1588359900000}},
 		{order: {id: 1, shop: 'shop'}},
-	])('Check for empty', ({order}) => {
+	])('Check for empty date or shop', ({order}) => {
 		const wrapper = shallow(<OrderComponent order={order}/>);
 		expect(wrapper.getElement()).toBeNull();
 	});
 
-	it('without orders items', () => {
+	it('should work without order\'s items', () => {
 		const order = {
 			id: 1,
 			date: 1588359900000,
@@ -43,7 +42,7 @@ describe('Order.tsx', () => {
 		expect(wrapper).toMatchSnapshot();
 	});
 
-	it('valid work', () => {
+	it('should be valid work', () => {
 		const order = {
 			id: 1,
 			date: 1588359900000,
