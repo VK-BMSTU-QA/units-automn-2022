@@ -28,34 +28,6 @@ exports[`Order.tsx exact date 1`] = `
 </div>
 `;
 
-exports[`Order.tsx exact order shop 1`] = `
-<div
-  className="Order"
->
-  <div
-    className="Order-header"
-  >
-    <span
-      className="Order-shop"
-    >
-      shop
-    </span>
-    <span
-      id="date"
-    >
-      1 февраля, сб, 2020 год
-    </span>
-  </div>
-  <div
-    className="Order-items"
-  >
-    <div>
-      Заказ пуст...
-    </div>
-  </div>
-</div>
-`;
-
 exports[`Order.tsx getItems 1`] = `
 <div
   className="Order"
