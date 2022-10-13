@@ -8,7 +8,7 @@ describe('getDate function', () => {
 	it('empty date', () => {
 		const date = 0;
 		const result = getDate(date);
-		expect(result).toBe( '');
+		expect(result).toBe('');
 	});
 
 	it('exact date', () => {
