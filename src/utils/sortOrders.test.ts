@@ -42,18 +42,3 @@ describe('sortByItemDate function', () => {
 		expect(sortByDate(order1!, order2!)).toBe(expected);
 	});
 });
-
-describe('sortByItemDate function', () => {
-	const dateNow = Date.now();
-	test.each([
-		{ order1: { date: dateNow }, order2: { date: dateNow + 1 }, expected: 1 },
-		{ order1: { date: dateNow + 1 }, order2: { date: dateNow }, expected: -1 },
-		{ order1: { date: dateNow }, order2: { date: dateNow }, expected: 0 },
-		{ order1: { date: 0 }, order2: { date: dateNow }, expected: 0 },
-		{ order1: { date: dateNow }, order2: { date: 0 }, expected: 0 },
-		{ order1: undefined, order2: { date: dateNow }, expected: 0 },
-		{ order1: { date: dateNow }, order2: undefined, expected: 0 }
-	])('Testing orders %s', ({ order1, order2, expected }) => {
-		expect(sortByDate(order1!, order2!)).toBe(expected);
-	});
-});
