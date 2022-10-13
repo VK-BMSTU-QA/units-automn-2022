@@ -85,12 +85,6 @@ describe('sortOrders function', () => {
 		expect(mockSortFunc).toBeCalled();
 	});
 
-	it('should not call sortFunction when orders is empty or undefiened', () => {
-		const orders: Order[] = [];
-		const mockSortFunc = jest.fn();
-		sortOrders(orders, mockSortFunc);
-		expect(mockSortFunc).not.toBeCalled();
-	});
 	test.each([
 		[[] as Order[]],
 		[undefined],
