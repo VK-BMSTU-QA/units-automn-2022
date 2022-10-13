@@ -31,39 +31,27 @@ describe('sortByItemCount function', () => {
 		[{ items: ['item-1-1'] }, {}],
 		[undefined, { items: ['item-2-1'] }],
 		[{ items: ['item-1-1'] }, undefined],
-	])('should return 0 when some of order is empty structure or undefined', (order1, order2) => {
+	])('should return 0 when some of orders is empty structure or undefined', (order1, order2) => {
 		expect(sortByItemCount(order1, order2)).toBe(0);
 	});
 });
 
 describe('sortByDate function', () => {
 	it('should return (1) when date of the first order less then of the second', () => {
-		const order1: Order = {
-			date: 1,
-		};
-		const order2: Order = {
-			date: 2,
-		};
+		const order1: Order = { date: 1, };
+		const order2: Order = { date: 2, };
 		expect(sortByDate(order1, order2)).toBe(1);
 	});
 
 	it('should return (-1) when date of the first order greater then of the second', () => {
-		const order1: Order = {
-			date: 2,
-		};
-		const order2: Order = {
-			date: 1,
-		};
+		const order1: Order = { date: 2, };
+		const order2: Order = { date: 1, };
 		expect(sortByDate(order1, order2)).toBe(-1);
 	});
 
-	it('should return 0 when dates equal', () => {
-		const order1: Order = {
-			date: 1,
-		};
-		const order2: Order = {
-			date: 1,
-		};
+	it('should return 0 when dates are equal', () => {
+		const order1: Order = { date: 1, };
+		const order2: Order = { date: 1, };
 		expect(sortByDate(order1, order2)).toBe(0);
 	});
 
@@ -72,7 +60,7 @@ describe('sortByDate function', () => {
 		[{ date: 1 }, {}],
 		[undefined, { date: 1 }],
 		[{ date: 1 }, undefined],
-	])('should return 0 when some of order is empty structure or undefined', (order1, order2) => {
+	])('should return 0 when some of orders is empty structure or undefined', (order1, order2) => {
 		expect(sortByDate(order1, order2)).toBe(0);
 	});
 });

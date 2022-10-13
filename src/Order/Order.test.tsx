@@ -57,11 +57,10 @@ describe('Order.tsx', () => {
 	});
 
 	test.each([
-		{ id: undefined, date: 0, shop: undefined, items: [] },
-		{ id: 0, date: undefined, shop: 'TestShop', items: [] },
+		undefined,
 		{ id: 0, date: 0, shop: undefined, items: [] },
-		{ id: 0, date: 0, shop: 'TestShop', items: undefined },
-	] as Order[])('should not render order when some field is undefined', (order) => {
+		{ id: 0, date: undefined, shop: 'TestShop', items: [] },
+	] as Order[])('should not render order when order, order-shop or order-date is undefined', (order) => {
 		const orderComponent = OrderComponent({ order: order });
 		expect(orderComponent).toBeNull();
 	});
