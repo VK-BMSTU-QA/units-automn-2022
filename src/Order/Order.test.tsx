@@ -17,34 +17,29 @@ describe('Order.tsx', () => {
 		jest.clearAllMocks();
 	});
 
-	it('OrderComponent doesnt have "id" field', () => {
-		const order = {
-			date: 0,
-			shop: 'Shop0',
-			items: ['0'],
-		};
-
-		wrapper = shallow(<OrderComponent order={order} />);
-		expect(wrapper.getElement()).toBeNull();
-	});
-
-	it('OrderComponent does not have "date" field', () => {
-		const order = {
-			id: 1,
-			shop: 'Shop1',
-			items: ['1'],
-		};
-		
-		wrapper = shallow(<OrderComponent order={order} />);
-		expect(wrapper.getElement()).toBeNull();
-	});
-
-	it('OrderComponent does not have "shop" field', () => {
-		const order = {
-			id: 2,
-			date: 2,
-			items: ['2'],
-		};
+	test.each([
+		{
+			order: {
+				id: 2,
+				date: 2,
+				items: ['2'],
+			},
+		},
+		{
+			order: {
+				id: 1,
+				shop: 'Shop1',
+				items: ['1'],
+			},
+		},
+		{
+			order: {
+				date: 0,
+				shop: 'Shop0',
+				items: ['0'],
+			},
+		},
+	])('null ckecks', ({order}) => {
 		wrapper = shallow(<OrderComponent order={order} />);
 		expect(wrapper.getElement()).toBeNull();
 	});
