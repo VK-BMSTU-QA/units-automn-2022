@@ -24,3 +24,5 @@ yarn-error.log*
 .idea
 .npmrc
 test-report.html
+
+./src/Order/__snapshot__
