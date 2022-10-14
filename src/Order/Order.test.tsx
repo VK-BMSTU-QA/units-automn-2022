@@ -24,6 +24,7 @@ describe('Order.tsx', () => {
 			items: []
 		};
 		const wrapper = shallow(<OrderComponent order={someOrder}/>);
+		expect(getDate).toBeCalled();
 		expect(wrapper).toMatchSnapshot();
 	});
 
@@ -53,6 +54,7 @@ describe('Order.tsx', () => {
 			]
 		};
 		const wrapper = shallow(<OrderComponent order={someOrder}/>);
+		expect(getDate).toBeCalled();
 		expect(wrapper).toMatchSnapshot();
 	});
 });
