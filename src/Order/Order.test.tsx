@@ -39,6 +39,7 @@ describe('Order.tsx', () => {
 			]
 		};
 		const wrapper = shallow(<OrderComponent order={someOrder}/>);
+		expect(getDate).toBeCalledTimes(0);
 		expect(wrapper.getElement()).toBeNull();
 	});
 
