@@ -15,30 +15,71 @@ describe('sortByItemCount function', () => {
 });
 
 describe('sortByDate function', () => {
+	const order1 = {
+		date: 1,
+	};
+	const order2 = {
+		date: 2,
+	};
+
 	it('same date', () => {
-		const order1 = {
-			date: 1,
-		};
-		const order2 = {
-			date: 1,
-		};
-		const result = sortByDate(order1, order2);
+		const result = sortByDate(order1, order1);
 		expect(result).toBe(0);
 	});
 
 	it('different date', () => {
-		const order1 = {
-			date: 1,
-		};
-		const order2 = {
-			date: 2,
-		};
 		const result = sortByDate(order1, order2);
 		expect(result).toBe(1);
 	});
 });
 
 describe('sortOrders function', () => {
+	const orders: Order[] = [
+		{
+			items: ['item1', 'item2'],
+			date: 2,
+		},
+		{
+			items: ['1'],
+			date: 1,
+		},
+		{
+			items: ['item1', 'item2', 'item3'],
+			date: 3,
+		}
+	];
+
+	const ordersSortedDate: Order[] = [
+		{
+			items: ['item1', 'item2', 'item3'],
+			date: 3,
+		},
+		{
+			items: ['item1', 'item2'],
+			date: 2,
+		},
+		{
+			items: ['1'],
+			date: 1,
+		}
+	];
+
+	const ordersSortedCount: Order[] = [
+		{
+			items: ['1'],
+			date: 1,
+		},
+		{
+			items: ['item1', 'item2'],
+			date: 2,
+		},
+		{
+			items: ['item1', 'item2', 'item3'],
+			date: 3,
+		}
+	];
+
+
 	it('empty array', () => {
 		const orders: Order[] = [];
 		sortOrders(orders, sortByDate);
@@ -46,82 +87,24 @@ describe('sortOrders function', () => {
 	});
 
 	it('sort two orders', () => {
-		const orders: Order[] = [
-			{
-				date: 2,
-			},
-			{
-				date: 1,
-			},
-			{
-				date: 3,
-			}
-		];
 		sortOrders(orders, sortByDate);
-		expect(orders).toEqual([
-			{
-				date: 3,
-			},
-			{
-				date: 2,
-			},
-			{
-				date: 1,
-			}
-		]);
+		expect(orders).toEqual(ordersSortedDate);
 	});
 
 	it('sort two orders by item count', () => {
-		const orders: Order[] = [
-			{
-				items: ['item1', 'item2'],
-			},
-			{
-				items: ['1'],
-			},
-			{
-				items: ['item1', 'item2', 'item3'],
-			}
-		];
 		sortOrders(orders, sortByItemCount);
-		expect(orders).toEqual([
-			{
-				items: ['1'],
-			},
-			{
-				items: ['item1', 'item2'],
-			},
-			{
-				items: ['item1', 'item2', 'item3'],
-			}
-		]);
+		expect(orders).toEqual(ordersSortedCount);
 	});
 
 	it('sort empty orders', () => {
-		const orders: Order[] = [
-			{},
-			{},
-			{}
-		];
+		const orders: Order[] = [{},{}];
 		sortOrders(orders, sortByDate);
-		expect(orders).toEqual([
-			{},
-			{},
-			{}
-		]);
+		expect(orders).toEqual([{},{}]);
 	});
 
 	it('sort array of null', () => {
-		const orders: Order[] = [
-			null,
-			null,
-			null
-		];
+		const orders: Order[] = [null, null];
 		sortOrders(orders, sortByDate);
-		expect(orders).toEqual([
-			null,
-			null,
-			null
-		]);
+		expect(orders).toEqual([null, null]);
 	});
 });

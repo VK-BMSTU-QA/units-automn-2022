@@ -1,36 +1,34 @@
 import React from 'react';
+import {OrderComponent} from './Order';
+import {shallow} from 'enzyme';
+import {configure} from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+import {getDate} from '../utils/getDate';
 
+configure({adapter: new Adapter()});
 jest.mock('../utils/getDate');
 
 afterEach(() => {
 	jest.resetAllMocks();
 });
 
-import {OrderComponent} from './Order';
-import {shallow} from 'enzyme';
-import {configure} from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-configure({adapter: new Adapter()});
-import {getDate} from '../utils/getDate';
-
 describe('Order.tsx', () => {
 	const dateExact = new Date(2020, 1, 1).getTime();
 
-	it('empty date', () => {
+	it('when date is empty', () => {
 		const wrapper = shallow(<OrderComponent order={{shop: 'shop', date: 0, items: []}}/>);
 		expect(wrapper).toMatchSnapshot();
 		expect(getDate).toBeCalledTimes(0);
 	});
 
-	it('exact date', () => {
+	it('when exact date is set on an order', () => {
 		const wrapper = shallow(<OrderComponent order={{shop: 'shop', date: dateExact, items: []}}/>);
 		expect(wrapper).toMatchSnapshot();
 		expect(getDate).toBeCalledTimes(1);
 		expect(getDate).toBeCalledWith(dateExact);
 	});
 
-	it('getItems', () => {
-		// test getItems method of OrdeComponent
+	it('when exact items are set on an order', () => {
 		const wrapper = shallow(<OrderComponent order={{shop: 'shop', date: dateExact, items: ['item1', 'item2']}}/>);
 		expect(wrapper).toMatchSnapshot();
 		expect(getDate).toBeCalledTimes(1);

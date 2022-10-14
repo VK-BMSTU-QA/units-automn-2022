@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Order.tsx empty date 1`] = `""`;
+exports[`Order.tsx when date is empty 1`] = `""`;
 
-exports[`Order.tsx exact date 1`] = `
+exports[`Order.tsx when exact date is set on an order 1`] = `
 <div
   className="Order"
 >
@@ -28,7 +28,7 @@ exports[`Order.tsx exact date 1`] = `
 </div>
 `;
 
-exports[`Order.tsx getItems 1`] = `
+exports[`Order.tsx when exact items are set on an order 1`] = `
 <div
   className="Order"
 >
