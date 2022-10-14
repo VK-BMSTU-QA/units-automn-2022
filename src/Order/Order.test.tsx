@@ -39,12 +39,12 @@ describe('Order.tsx', () => {
 			]}},
 		{testOrder: {
 			id: 123}},
-	])('render with empty shop or null date or with only id', ({testOrder}) => {
+	])('should render with empty shop or null date or with only id', ({testOrder}) => {
 		const wrapper = shallow(<OrderComponent order={testOrder}/>);
 		expect(wrapper.getElement()).toBeNull();
 	});
 
-	it('render with empty items', () => {
+	it('should render with empty items', () => {
 		const testOrder = {
 			id: 100,
 			date: 1588359900000,
@@ -57,7 +57,7 @@ describe('Order.tsx', () => {
 	});
 
 
-	it('render with full information about order', () => {
+	it('should render with full information about order', () => {
 		const testOrder = {
 			id: 123,
 			date: 1544356800000,

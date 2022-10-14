@@ -42,7 +42,7 @@ describe('sortByItemCount function', () => {
 });
 
 describe('sortByDate function', () => {
-	it('same order date', () => {
+	it('should sort same order date', () => {
 		const first = {date: 1588359900000};
 		const second = {date: 1588359900000};
 
@@ -54,7 +54,7 @@ describe('sortByDate function', () => {
 	test.each([
 		{first: {date: 1588359900000}, second: {date: 1588369900001}, expected: 1},
 		{first: {date: 1588369900001}, second: {date: 1588359900000}, expected: -1},
-	])('sort orders, where one of orders has has later date', ({first, second, expected}) => {
+	])('should sort orders, where one of orders has has later date', ({first, second, expected}) => {
 		expect(sortByDate(first, second)).toBe(expected);
 	});
 
@@ -62,11 +62,11 @@ describe('sortByDate function', () => {
 		{first: {date: 1588359900000}, second: {items: ['item1', 'item2']}, expected: 0},
 		{first: {items: ['1', '2']}, second: {date: 1588359900000}, expected: 0},
 		{first: {items: ['item1', 'item2']}, second: {items: ['1', '2']}, expected: 0},
-	])('sort orders without date', ({first, second, expected}) => {
+	])('should sort orders without date', ({first, second, expected}) => {
 		expect(sortByDate(first, second)).toBe(expected);
 	});
 
-	it('empty orders', () => {
+	it('should sort empty orders', () => {
 		const first = {};
 		const second = {};
 
@@ -80,11 +80,11 @@ describe('sortOrders function', () => {
 	test.each([
 		{orders: [], sortFunction: sortByDate, expected: undefined},
 		{orders: [], sortFunction: sortByItemCount, expected: undefined},
-	])('empty orders', ({orders, sortFunction, expected}) => {
+	])('should sort empty orders', ({orders, sortFunction, expected}) => {
 		expect(sortOrders(orders, sortFunction)).toBe(expected);
 	});
 
-	it('sort orders by date', () => {
+	it('should sort orders by date', () => {
 		const orders = [{date: 1588359900000}, {date: 1588359900001}];
 		const sorted = [{date: 1588359900001}, {date: 1588359900000}];
 
@@ -93,13 +93,13 @@ describe('sortOrders function', () => {
 		expect(orders).toEqual(sorted);
 	});
 
-	it('sort orders by items', () => {
+	it('should sort orders by items', () => {
 		const orders = [{items: ['1', '2', '3']}, {items: ['item1', 'item2']}];
-		const sorted = [{items: ['item1', 'item2']}, {items: ['1', '2', '3']}];
+		const expected = [{items: ['item1', 'item2']}, {items: ['1', '2', '3']}];
 
 		sortOrders(orders, sortByItemCount);
 
-		expect(orders).toEqual(sorted);
+		expect(orders).toEqual(expected);
 	});
 });
 
