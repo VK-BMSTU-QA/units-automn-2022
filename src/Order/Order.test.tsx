@@ -2,10 +2,10 @@ import React from 'react';
 import {configure, shallow} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import {OrderComponent} from './Order';
-
+import {getDate} from '../utils/getDate';
+import {sortByItemCount} from "../utils/sortOrders";
 
 jest.mock('../utils/getDate');
-import {getDate} from '../utils/getDate';
 configure({ adapter: new Adapter() });
 
 describe('OrderComponent function', () => {
@@ -17,18 +17,13 @@ describe('OrderComponent function', () => {
 		jest.clearAllMocks();
 	});
 
-	it('order is empty', () => {
-		const testOrder = {
-		};
-		const wrapper = shallow(<OrderComponent order={testOrder}/>);
-		expect(wrapper.getElement()).toBeNull();
-	});
+	test.each([
+		[
+			shallow(<OrderComponent order={{id: 1}}/>),
+			shallow(<OrderComponent order={{}}/>)
 
-	it('order.shop is empty or order.date is empty', () => {
-		const testOrder = {
-			id: 1
-		};
-		const wrapper = shallow(<OrderComponent order={testOrder}/>);
+		],
+	])('order with empty items and empty order', (wrapper) => {
 		expect(wrapper.getElement()).toBeNull();
 	});
 
@@ -42,18 +37,19 @@ describe('OrderComponent function', () => {
 		expect(wrapper).toMatchSnapshot();
 	});
 
+	const testOrder = {
+		id: 1,
+		date: 10102020,
+		shop: 'shop',
+		items: [
+			'item',
+			'item',
+			'item',
+			'item',
+		]
+	};
 	it('ok', () => {
-		const testOrder = {
-			id: 1,
-			date: 10102020,
-			shop: 'shop',
-			items: [
-				'item',
-				'item',
-				'item',
-				'item',
-			]
-		};
+
 		const wrapper = shallow(<OrderComponent order={testOrder}/>);
 		expect(wrapper).toMatchSnapshot();
 	});
