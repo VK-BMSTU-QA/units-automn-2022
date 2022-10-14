@@ -13,6 +13,8 @@ afterEach(() => {
 	jest.resetAllMocks();
 });
 
+const testDate = new Date(2022, 10, 13).getTime();
+
 describe('Order.tsx', () => {
 	it('empty date', () => {
 		const order = {
@@ -26,7 +28,6 @@ describe('Order.tsx', () => {
 	});
 
 	it('empty items', () => {
-		const testDate = new Date(2022, 10, 13).getTime();
 		const order = {
 			date: testDate,
 			shop: 'shop',
@@ -35,10 +36,10 @@ describe('Order.tsx', () => {
 		const result = shallow(<OrderComponent order={order}/>);
 		expect(result).toMatchSnapshot();
 		expect(getDate).toBeCalledTimes(1);
+		expect(getDate).toBeCalledWith(testDate);
 	});
 
 	it('ok', () => {
-		const testDate = new Date(2022, 10, 13).getTime();
 		const testItems = ['1', '2', '3'];
 		const order = {
 			date: testDate,
