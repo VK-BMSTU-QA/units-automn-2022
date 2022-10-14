@@ -3,13 +3,12 @@ import {configure, shallow} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import {OrderComponent} from './Order';
 import {getDate} from '../utils/getDate';
-import {sortByItemCount} from "../utils/sortOrders";
+
 
 jest.mock('../utils/getDate');
 configure({ adapter: new Adapter() });
 
 describe('OrderComponent function', () => {
-
 	beforeEach(() => {
 		getDate.mockReturnValue('test date');
 	});
