@@ -5,7 +5,7 @@ describe('sortByItemCount function', () => {
 		{order1: {items: ['item1']}, order2: {items: ['1', '2']}, expected: -1},
 		{order1: {items: []}, order2: {items: []}, expected: 0},
 		{order1: {items: ['item1']}, order2: {items: []}, expected: 1}
-	])('orders with some items', ({order1, order2, expected}) => {
+	])('it should orders with some items', ({order1, order2, expected}) => {
 		expect(sortByItemCount(order1, order2)).toBe(expected);
 	});
 
