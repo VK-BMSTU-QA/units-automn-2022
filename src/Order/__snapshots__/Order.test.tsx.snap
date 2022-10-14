@@ -1,6 +1,36 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Order.tsx all info 1`] = `
+exports[`Order.tsx OrderComponent 1`] = `
+<div
+  className="Order"
+>
+  <div
+    className="Order-header"
+  >
+    <span
+      className="Order-shop"
+    >
+      Alihandro Express
+    </span>
+    <span
+      id="date"
+    >
+      26 мая, пт, 2020 год
+    </span>
+  </div>
+  <div
+    className="Order-items"
+  >
+    <div>
+      Заказ пуст...
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Order.tsx OrderComponent 2`] = `""`;
+
+exports[`Order.tsx OrderComponent 3`] = `
 <div
   className="Order"
 >
@@ -38,34 +68,6 @@ exports[`Order.tsx all info 1`] = `
       key="2"
     >
       Новый стиль один розница яйцо для упаковки форма латекс
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Order.tsx empty item list 1`] = `
-<div
-  className="Order"
->
-  <div
-    className="Order-header"
-  >
-    <span
-      className="Order-shop"
-    >
-      Alihandro Express
-    </span>
-    <span
-      id="date"
-    >
-      26 мая, пт, 2020 год
-    </span>
-  </div>
-  <div
-    className="Order-items"
-  >
-    <div>
-      Заказ пуст...
     </div>
   </div>
 </div>

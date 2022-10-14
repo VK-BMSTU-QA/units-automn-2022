@@ -16,46 +16,16 @@ describe('Order.tsx', () => {
 		jest.clearAllMocks();
 	});
 
-	it('empty item list', () => {
-		const someOrder = {
-			id: 123,
-			date: 1544356800000,
-			shop: 'Alihandro Express',
-			items: []
-		};
-		const wrapper = shallow(<OrderComponent order={someOrder}/>);
-		expect(getDate).toBeCalled();
-		expect(wrapper).toMatchSnapshot();
-	});
 
-	it('no shop info', () => {
-		const someOrder = {
-			id: 123,
-			date: 1544356800000,
-			items: [
-				'Утиный пластмасса для показ новый год',
-				'Курица из нержавеющей стали, утка, гусь, голубь, питьевой фонтан',
-				'Новый стиль один розница яйцо для упаковки форма латекс',
-			]
-		};
-		const wrapper = shallow(<OrderComponent order={someOrder}/>);
-		expect(getDate).toBeCalledTimes(0);
-		expect(wrapper.getElement()).toBeNull();
-	});
+	const table = [
+		{order: {id: 123, date: 1544356800000, shop: 'Alihandro Express', items: []}, expected: 1},
+		{order: {id: 123, date: 1544356800000, items: ['Утиный пластмасса для показ новый год', 'Курица из нержавеющей стали, утка, гусь, голубь, питьевой фонтан', 'Новый стиль один розница яйцо для упаковки форма латекс',]}, expected: 0},
+		{order: {id: 123, date: 1544356800000, shop: 'Alihandro Express', items: ['Утиный пластмасса для показ новый год', 'Курица из нержавеющей стали, утка, гусь, голубь, питьевой фонтан', 'Новый стиль один розница яйцо для упаковки форма латекс',]}, expected: 1},
+	];
 
-	it('all info', () => {
-		const someOrder = {
-			id: 123,
-			date: 1544356800000,
-			shop: 'Alihandro Express',
-			items: [
-				'Утиный пластмасса для показ новый год',
-				'Курица из нержавеющей стали, утка, гусь, голубь, питьевой фонтан',
-				'Новый стиль один розница яйцо для упаковки форма латекс',
-			]
-		};
-		const wrapper = shallow(<OrderComponent order={someOrder}/>);
-		expect(getDate).toBeCalled();
+	it.each(table)('OrderComponent', ({order, expected}) => {
+		const wrapper = shallow(<OrderComponent order={order}/>);
+		expect(getDate).toBeCalledTimes(expected);
 		expect(wrapper).toMatchSnapshot();
 	});
 });
