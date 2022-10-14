@@ -1,8 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Order.tsx when date is empty 1`] = `""`;
-
-exports[`Order.tsx when exact date is set on an order 1`] = `
+exports[`Order.tsx should match exact date 1`] = `
 <div
   className="Order"
 >
@@ -28,7 +26,7 @@ exports[`Order.tsx when exact date is set on an order 1`] = `
 </div>
 `;
 
-exports[`Order.tsx when exact items are set on an order 1`] = `
+exports[`Order.tsx should match exact items 1`] = `
 <div
   className="Order"
 >
@@ -62,3 +60,5 @@ exports[`Order.tsx when exact items are set on an order 1`] = `
   </div>
 </div>
 `;
+
+exports[`Order.tsx should not call for date conversion 1`] = `""`;

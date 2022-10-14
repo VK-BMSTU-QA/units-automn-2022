@@ -15,20 +15,20 @@ afterEach(() => {
 describe('Order.tsx', () => {
 	const dateExact = new Date(2020, 1, 1).getTime();
 
-	it('when date is empty', () => {
+	it('should not call for date conversion', () => {
 		const wrapper = shallow(<OrderComponent order={{shop: 'shop', date: 0, items: []}}/>);
 		expect(wrapper).toMatchSnapshot();
 		expect(getDate).toBeCalledTimes(0);
 	});
 
-	it('when exact date is set on an order', () => {
+	it('should match exact date', () => {
 		const wrapper = shallow(<OrderComponent order={{shop: 'shop', date: dateExact, items: []}}/>);
 		expect(wrapper).toMatchSnapshot();
 		expect(getDate).toBeCalledTimes(1);
 		expect(getDate).toBeCalledWith(dateExact);
 	});
 
-	it('when exact items are set on an order', () => {
+	it('should match exact items', () => {
 		const wrapper = shallow(<OrderComponent order={{shop: 'shop', date: dateExact, items: ['item1', 'item2']}}/>);
 		expect(wrapper).toMatchSnapshot();
 		expect(getDate).toBeCalledTimes(1);

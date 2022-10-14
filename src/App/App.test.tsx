@@ -13,7 +13,7 @@ describe('App component', () => {
 		wrapper = shallow(<App/>);
 	});
 
-	it('render with default state DATE', () => {
+	it('should render with default state DATE', () => {
 		expect(wrapper).toMatchSnapshot();
 	});
 

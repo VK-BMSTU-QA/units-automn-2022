@@ -2,7 +2,7 @@ import {sortByItemCount, sortByDate, sortOrders, sortTypes} from './sortOrders';
 import {Order} from '../data/fakeOrders';
 
 describe('sortByItemCount function', () => {
-	it('same items count', () => {
+	it('should compare two same orders by item count and return 0', () => {
 		const order1 = {
 			items: ['item1', 'item2'],
 		};
@@ -22,12 +22,12 @@ describe('sortByDate function', () => {
 		date: 2,
 	};
 
-	it('same date', () => {
+	it('should compare two same orders by date and return 0', () => {
 		const result = sortByDate(order1, order1);
 		expect(result).toBe(0);
 	});
 
-	it('different date', () => {
+	it('should compare two different orders by date and return 1', () => {
 		const result = sortByDate(order1, order2);
 		expect(result).toBe(1);
 	});
@@ -80,31 +80,31 @@ describe('sortOrders function', () => {
 	];
 
 
-	it('empty array', () => {
+	it('should return same empty array', () => {
 		const orders: Order[] = [];
 		sortOrders(orders, sortByDate);
-		expect(orders).toEqual([]);
+		expect(orders).toEqual(orders);
 	});
 
-	it('sort two orders', () => {
+	it('should sort orders by date', () => {
 		sortOrders(orders, sortByDate);
 		expect(orders).toEqual(ordersSortedDate);
 	});
 
-	it('sort two orders by item count', () => {
+	it('should sort orders by item count', () => {
 		sortOrders(orders, sortByItemCount);
 		expect(orders).toEqual(ordersSortedCount);
 	});
 
-	it('sort empty orders', () => {
+	it('should return same array with empty orders', () => {
 		const orders: Order[] = [{},{}];
 		sortOrders(orders, sortByDate);
-		expect(orders).toEqual([{},{}]);
+		expect(orders).toEqual(orders);
 	});
 
-	it('sort array of null', () => {
+	it('should return same array of nulls', () => {
 		const orders: Order[] = [null, null];
 		sortOrders(orders, sortByDate);
-		expect(orders).toEqual([null, null]);
+		expect(orders).toEqual(orders);
 	});
 });
