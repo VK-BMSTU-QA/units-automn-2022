@@ -19,7 +19,7 @@ describe('sortByItemCount function', () => {
 	])('orders with empty items and empty orders', ({order1, order2, expected}) => {
 		expect(sortByItemCount(order1, order2)).toBe(expected);
 	});
-	it('undefined orders', () => {
+	it('should work with undefined orders', () => {
 		const order1 = {};
 		const order2 = {};
 		expect(sortByItemCount(order1, order2)).toBe(0);
@@ -45,7 +45,7 @@ describe('sortByDate function', () => {
 		expect(sortByDate(order1, order2)).toBe(expected);
 	});
 
-	it('undefined dates', () => {
+	it('should work with undefined dates', () => {
 		const order1 = {
 			date: undefined
 		};
@@ -81,19 +81,19 @@ describe('sortByDate function', () => {
 });
 
 describe('getSortFunction function', () => {
-	it('empty', () => {
+	it(' should be empty', () => {
 		const sortType = '';
 		const result = getSortFunction(sortType);
 		expect(result).toBeNull();
 	});
 
-	it('sortByItemCount', () => {
+	it('should sortByItemCount', () => {
 		const sortType = sortTypes.COUNT;
 		const result = getSortFunction(sortType);
 		expect(result).toBe(sortByItemCount);
 	});
 
-	it('sortByDate', () => {
+	it('should sortByDate', () => {
 		const sortType = sortTypes.DATE;
 		const result = getSortFunction(sortType);
 		expect(result).toBe(sortByDate);

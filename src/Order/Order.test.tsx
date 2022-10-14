@@ -36,19 +36,18 @@ describe('OrderComponent function', () => {
 		expect(wrapper).toMatchSnapshot();
 	});
 
-	const testOrder = {
-		id: 1,
-		date: 10102020,
-		shop: 'shop',
-		items: [
-			'item',
-			'item',
-			'item',
-			'item',
-		]
-	};
 	it('ok', () => {
-
+		const testOrder = {
+			id: 1,
+			date: 10102020,
+			shop: 'shop',
+			items: [
+				'item',
+				'item',
+				'item',
+				'item',
+			]
+		};
 		const wrapper = shallow(<OrderComponent order={testOrder}/>);
 		expect(wrapper).toMatchSnapshot();
 	});
