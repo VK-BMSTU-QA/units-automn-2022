@@ -2,9 +2,9 @@ import React from 'react';
 import {shallow, configure} from 'enzyme';
 import {OrderComponent} from './Order';
 import Adapter from 'enzyme-adapter-react-16';
+import {getDate} from '../utils/getDate';
 
 jest.mock('../utils/getDate');
-import {getDate} from '../utils/getDate';
 configure({ adapter: new Adapter() });
 
 describe('OrderComponent functions', () => {
