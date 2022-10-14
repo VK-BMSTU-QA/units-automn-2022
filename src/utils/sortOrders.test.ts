@@ -16,7 +16,7 @@ describe('sortByItemCount function', () => {
 			{order1: {items: ['item1']}, order2: {items: undefined}, expected: 0},
 			{order1: {}, order2: {}, expected: 0},
 		],
-	])('orders with empty items and empty orders', ({order1, order2, expected}) => {
+	])('it should return expected number', ({order1, order2, expected}) => {
 		expect(sortByItemCount(order1, order2)).toBe(expected);
 	});
 	it('should work with undefined orders', () => {
@@ -87,13 +87,13 @@ describe('getSortFunction function', () => {
 		expect(result).toBeNull();
 	});
 
-	it('should sortByItemCount', () => {
+	it('it should return sortByItemCount function', () => {
 		const sortType = sortTypes.COUNT;
 		const result = getSortFunction(sortType);
 		expect(result).toBe(sortByItemCount);
 	});
 
-	it('should sortByDate', () => {
+	it('it should return sortByDate function', () => {
 		const sortType = sortTypes.DATE;
 		const result = getSortFunction(sortType);
 		expect(result).toBe(sortByDate);

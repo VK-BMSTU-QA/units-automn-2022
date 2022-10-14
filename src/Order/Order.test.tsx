@@ -22,11 +22,11 @@ describe('OrderComponent function', () => {
 			shallow(<OrderComponent order={{}}/>)
 
 		],
-	])('order with empty items and empty order', (wrapper) => {
+	])('it should return null template', (wrapper) => {
 		expect(wrapper.getElement()).toBeNull();
 	});
 
-	it('!order.items', () => {
+	it('it should return empty template', () => {
 		const testOrder = {
 			id: 1,
 			date: 10102020,
@@ -36,7 +36,7 @@ describe('OrderComponent function', () => {
 		expect(wrapper).toMatchSnapshot();
 	});
 
-	it('ok', () => {
+	it('it should return template', () => {
 		const testOrder = {
 			id: 1,
 			date: 10102020,
