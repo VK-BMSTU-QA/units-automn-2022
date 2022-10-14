@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+
+exports[`OrderComponent function it should return empty template 1`] = `
+<div
+  className="Order"
+>
+  <div
+    className="Order-header"
+  >
+    <span
+      className="Order-shop"
+    >
+      shop
+    </span>
+    <span
+      id="date"
+    >
+      test date
+    </span>
+  </div>
+  <div
+    className="Order-items"
+  >
+    <div>
+      Заказ пуст...
+    </div>
+  </div>
+</div>
+`;
+
+exports[`OrderComponent function it should return template 1`] = `
+<div
+  className="Order"
+>
+  <div
+    className="Order-header"
+  >
+    <span
+      className="Order-shop"
+    >
+      shop
+    </span>
+    <span
+      id="date"
+    >
+      test date
+    </span>
+  </div>
+  <div
+    className="Order-items"
+  >
+    <div
+      className="Order-item"
+      key="0"
+    >
+      item
+    </div>
+    <div
+      className="Order-item"
+      key="1"
+    >
+      item
+    </div>
+    <div
+      className="Order-item"
+      key="2"
+    >
+      item
+    </div>
+    <div
+      className="Order-item"
+      key="3"
+    >
+      item
+    </div>
+  </div>
+</div>
+`;
+
