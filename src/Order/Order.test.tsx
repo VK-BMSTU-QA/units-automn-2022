@@ -43,20 +43,19 @@ describe('Order component', () => {
 
 
 	it('should not render undefined order', () => {
-		const order = {}
+		const order = {};
 		wrapper = shallow(<OrderComponent   order={order}/>);
 
 		expect(wrapper.getElement()).toBeNull();
-	});
-	
+	});	
 
 	it('should render order with empty items and call "getDate" function', () => {
-		const order = 	{
+		const order = {
 			id: 100,
 			date: 1588359900000,
 			shop: 'Сбереги Мега Маркер',
 			items: [],
-		},
+		};
 		wrapper = shallow(<OrderComponent order={order}/>);
 
 		expect(wrapper).toMatchSnapshot();
@@ -73,7 +72,7 @@ describe('Order component', () => {
 				'Курица из нержавеющей стали, утка, гусь, голубь, питьевой фонтан',
 				'Новый стиль один розница яйцо для упаковки форма латекс',
 			]
-		}
+		};
 		wrapper = shallow(<OrderComponent order={order}/>);
 
 		expect(wrapper).toMatchSnapshot();
