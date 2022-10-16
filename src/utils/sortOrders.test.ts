@@ -25,7 +25,7 @@ describe('sortByItemCount function', () => {
 // My tests
 
 describe('sortByItemCount function', () => {
-	it('empty order', () => {
+	it('should sort two empty orders', () => {
 		const order1 = undefined;
 
 		const order2 = undefined;
@@ -35,19 +35,11 @@ describe('sortByItemCount function', () => {
 		expect(result).toBe(0);
 	});
 
-
-	it('undefined order', () => {
-		const order1 = {
-			items: undefined,
-		};
-
-		const order2 = {
-			items: ['false', 'false'],
-		};
-
-		const result = sortByItemCount(order1, order2);
-
-		expect(result).toBe(0);
+	// should sort undefined order
+	test.each([
+		[{items: undefined,}, {items: ['false', 'false'],}, 0],
+		[{items: ['false', 'false'],}, {items: undefined,}, 0],])('valid dates', (a, b, expected) => {
+		expect(sortByItemCount(a, b)).toBe(expected);
 	});
 
 	test.each([
@@ -60,7 +52,7 @@ describe('sortByItemCount function', () => {
 
 
 describe('sortByDate function', () => {
-	it('empty order', () => {
+	it('should sort empty order', () => {
 		const order1 = undefined;
 
 		const order2 = undefined;
@@ -70,19 +62,11 @@ describe('sortByDate function', () => {
 		expect(result).toBe(0);
 	});
 
-
-	it('zero order', () => {
-		const order1 = {
-			date: 6,
-		};
-
-		const order2 = {
-			date: 0,
-		};
-
-		const result = sortByDate(order1, order2);
-
-		expect(result).toBe(0);
+	// should sort zero order
+	test.each([
+		[{date: 6,}, {date: 0,}, 0],
+		[{date: 0,}, {date: 6,}, 0],])('valid dates', (a, b, expected) => {
+		expect(sortByDate(a, b)).toBe(expected);
 	});
 
 	test.each([
@@ -95,28 +79,19 @@ describe('sortByDate function', () => {
 
 
 describe('sortOrders function', () => {
-	it('empty orders', () => {
+	it('should sort empty orders', () => {
 
 		const orders = undefined;
-		const sortFunction = sortByItemCount;
+		const sortFunction = jest.fn();
 		const result = sortOrders(orders, sortFunction);
 
 		expect(orders).toBe(undefined);
+		expect(sortFunction).not.toHaveBeenCalled();
 	});
-
-	it('empty orders', () => {
-
-		const orders = undefined;
-		const sortFunction = sortByItemCount;
-		const result = sortOrders(orders, sortFunction);
-
-		expect(orders).toBe(undefined);
-	});
-
+	
 	const sortF = jest.fn(); 
-	test.each([
-		[fakeOrders, sortF]])('valid orders', (orders, sortFunction) => {
-		const result = sortOrders(orders, sortFunction);
+	it('should sort valid orders', () => {
+		const result = sortOrders(fakeOrders, sortF);
 		expect(sortF).toBeCalled();
 	});
 });

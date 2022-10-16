@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Order component order with empty items 1`] = `
+exports[`Order component should render order with empty items and call "getDate" function 1`] = `
 <div
   className="Order"
 >
@@ -14,9 +14,7 @@ exports[`Order component order with empty items 1`] = `
     </span>
     <span
       id="date"
-    >
-      2022-10-13
-    </span>
+    />
   </div>
   <div
     className="Order-items"
@@ -28,35 +26,7 @@ exports[`Order component order with empty items 1`] = `
 </div>
 `;
 
-exports[`Order component order with undefined items 1`] = `
-<div
-  className="Order"
->
-  <div
-    className="Order-header"
-  >
-    <span
-      className="Order-shop"
-    >
-      shop
-    </span>
-    <span
-      id="date"
-    >
-      2022-10-13
-    </span>
-  </div>
-  <div
-    className="Order-items"
-  >
-    <div>
-      Заказ пуст...
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Order component render order with items 1`] = `
+exports[`Order component should render order with items 1`] = `
 <div
   className="Order"
 >
@@ -70,9 +40,7 @@ exports[`Order component render order with items 1`] = `
     </span>
     <span
       id="date"
-    >
-      2022-10-13
-    </span>
+    />
   </div>
   <div
     className="Order-items"
@@ -94,6 +62,32 @@ exports[`Order component render order with items 1`] = `
       key="2"
     >
       Новый стиль один розница яйцо для упаковки форма латекс
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Order component should render order with undefined items 1`] = `
+<div
+  className="Order"
+>
+  <div
+    className="Order-header"
+  >
+    <span
+      className="Order-shop"
+    >
+      shop
+    </span>
+    <span
+      id="date"
+    />
+  </div>
+  <div
+    className="Order-items"
+  >
+    <div>
+      Заказ пуст...
     </div>
   </div>
 </div>
