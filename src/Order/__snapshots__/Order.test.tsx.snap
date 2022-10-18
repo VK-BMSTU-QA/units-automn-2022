@@ -1,34 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Order.tsx should render order with empty items 1`] = `
-<div
-  className="Order"
->
-  <div
-    className="Order-header"
-  >
-    <span
-      className="Order-shop"
-    >
-      Alihandro Express
-    </span>
-    <span
-      id="date"
-    >
-      14 мая, сб, 2022 год
-    </span>
-  </div>
-  <div
-    className="Order-items"
-  >
-    <div>
-      Заказ пуст...
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Order.tsx should render regular order 1`] = `
+exports[`Order.tsx should render completely filled order, and should call getDate()  1`] = `
 <div
   className="Order"
 >
@@ -66,6 +38,34 @@ exports[`Order.tsx should render regular order 1`] = `
       key="2"
     >
       Новый стиль один розница яйцо для упаковки форма латекс
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Order.tsx should render order with empty items, and should call getDate()  1`] = `
+<div
+  className="Order"
+>
+  <div
+    className="Order-header"
+  >
+    <span
+      className="Order-shop"
+    >
+      Alihandro Express
+    </span>
+    <span
+      id="date"
+    >
+      14 мая, сб, 2022 год
+    </span>
+  </div>
+  <div
+    className="Order-items"
+  >
+    <div>
+      Заказ пуст...
     </div>
   </div>
 </div>

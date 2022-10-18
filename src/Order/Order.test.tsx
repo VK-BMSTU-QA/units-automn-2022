@@ -17,8 +17,8 @@ describe('Order.tsx', () => {
 		jest.clearAllMocks();
 	});
 
-	it('should render regular order', () => {
-		const order: Order = {
+	test.each([
+		['completely filled order',{
 			id: 123,
 			date: 1544356800000,
 			shop: 'Alihandro Express',
@@ -27,32 +27,16 @@ describe('Order.tsx', () => {
 				'Курица из нержавеющей стали, утка, гусь, голубь, питьевой фонтан',
 				'Новый стиль один розница яйцо для упаковки форма латекс',
 			]
-		};
-		const wrapper = shallow(<OrderComponent order={order} />);
-		expect(wrapper).toMatchSnapshot();
-	});
-
-	it('should render order with empty items', () => {
-		const order: Order = {
+		}],
+		['order with empty items',{
 			id: 123,
 			date: 1544356800000,
 			shop: 'Alihandro Express',
 			items: []
-		};
+		}],
+	])('should render %s, and should call getDate() ', (testName,order) => {
 		const wrapper = shallow(<OrderComponent order={order} />);
 		expect(wrapper).toMatchSnapshot();
-	});
-
-	it('should call getDate() while rendering regular order', () => {
-		const order: Order = {
-			id: 123,
-			date: 1544356800000,
-			shop: 'Alihandro Express',
-			items: [
-				'Утиный пластмасса для показ новый год',
-			]
-		};
-		const wrapper = shallow(<OrderComponent order={order} />);
 		expect(getDate).toBeCalled();
 	});
 

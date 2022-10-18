@@ -66,14 +66,12 @@ describe('sortByDate function', () => {
 });
 
 describe('getSortFunction function', () => {
-	it('should return sortByItemCount()', () => {
-		expect(getSortFunction(sortTypes.COUNT)).toBe(sortByItemCount);
-	});
-	it('should return sortByDate()', () => {
-		expect(getSortFunction(sortTypes.DATE)).toBe(sortByDate);
-	});
-	it('should return null when requested not sort-by-date or sort-by-count', () => {
-		expect(getSortFunction('notCountAndNoteDate')).toBeNull();
+	test.each([
+		[sortTypes.COUNT, sortByItemCount.name, sortByItemCount],
+		[sortTypes.DATE, sortByDate.name, sortByDate],
+		['notCountAndNoteDate', null, null],
+	])('should return sorting function by %s %s', (sortFuncStr, expectedSortFuncName, expectedSortFunc) => {
+		expect(getSortFunction(sortFuncStr)).toBe(expectedSortFunc);
 	});
 });
 
