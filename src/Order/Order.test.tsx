@@ -1,10 +1,11 @@
 import React from 'react';
 import { getDate } from '../utils/getDate';
 import { Order } from '../data/fakeOrders';
-jest.mock('../utils/getDate');
 import { shallow, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import { OrderComponent } from './Order';
+
+jest.mock('../utils/getDate');
 
 configure({ adapter: new Adapter() });
 
@@ -18,7 +19,7 @@ describe('Order.tsx', () => {
 	});
 
 	test.each([
-		['completely filled order',{
+		['completely filled order', {
 			id: 123,
 			date: 1544356800000,
 			shop: 'Alihandro Express',
@@ -28,16 +29,16 @@ describe('Order.tsx', () => {
 				'Новый стиль один розница яйцо для упаковки форма латекс',
 			]
 		}],
-		['order with empty items',{
+		['order with empty items', {
 			id: 123,
 			date: 1544356800000,
 			shop: 'Alihandro Express',
 			items: []
 		}],
-	])('should render %s, and should call getDate() ', (testName,order) => {
+	])('should render %s, and should call getDate() ', (testName, order) => {
 		const wrapper = shallow(<OrderComponent order={order} />);
 		expect(wrapper).toMatchSnapshot();
-		expect(getDate).toBeCalled();
+		expect(getDate).toBeCalledWith(order.date);
 	});
 
 	test.each([

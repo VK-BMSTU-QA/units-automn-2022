@@ -31,7 +31,9 @@ describe('sortByItemCount function', () => {
 		[{ items: ['1-1'] }, {}],
 		[undefined!, { items: ['2-1'] }],
 		[{ items: ['1-1'] }, undefined!],
-	])('should return 0 when some of orders is empty structure or undefined', (order1, order2) => {
+		[{ items: ['1-1'] }, {items: undefined}],
+		[{ items: undefined }, {items: ['2-1']}],
+	])('should return 0 when some of orders is empty structure, undefined or items-field is undefined', (order1, order2) => {
 		expect(sortByItemCount(order1, order2)).toBe(0);
 	});
 });
@@ -60,7 +62,9 @@ describe('sortByDate function', () => {
 		[{ date: 1 }, {}],
 		[undefined!, { date: 1 }],
 		[{ date: 1 }, undefined!],
-	])('should return 0 when some of orders is empty structure or undefined', (order1, order2) => {
+		[{ date: 1 }, {date: undefined}],
+		[{date: undefined}, { date: 1 }],
+	])('should return 0 when some of orders is empty structure, undefined or date-field is undefined', (order1, order2) => {
 		expect(sortByDate(order1, order2)).toBe(0);
 	});
 });
