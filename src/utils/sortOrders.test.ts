@@ -16,9 +16,10 @@ describe('sortOrders function', ()=>{
 	it('should return undefined if there are no orders', () => {
 		const orders = undefined;
 
-		const sortFunc = jest.fn((x, y) => x > y ? 1 : x < y ? -1 : 0);
+		const sortFunc = jest.fn();
 		const res = sortOrders(orders, sortFunc);
 		expect(res).toBeUndefined();
+		expect(sortFunc).not.toBeCalled();
 	});
 });
 
