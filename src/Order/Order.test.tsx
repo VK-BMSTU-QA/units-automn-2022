@@ -17,15 +17,20 @@ describe('Order.tsx', () => {
 		jest.clearAllMocks();
 	});
 
-	it('render order with empty items', () => {
-		const order = fakeOrders[0];
+	it('should call getDate on render with empty items', () => {
+		const order = {
+			id: 100,
+			date: 1588359900000,
+			shop: 'Сбереги Мега Маркер',
+			items: [],
+		};
 
 		const wrapper = shallow(<OrderComponent order={order}/>);
 		expect(wrapper).toMatchSnapshot();
 		expect(getDate).toBeCalled();
 	});
 
-	it('render order with not empty items', () => {
+	it('should call getDate on render with not empty items', () => {
 		const order = fakeOrders[1];
 
 		const wrapper = shallow(<OrderComponent order={order}/>);

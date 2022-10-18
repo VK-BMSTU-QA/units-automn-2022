@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Order.tsx render order with empty items 1`] = `
+exports[`Order.tsx should call getDate on render with empty items 1`] = `
 <div
   className="Order"
 >
@@ -28,7 +28,7 @@ exports[`Order.tsx render order with empty items 1`] = `
 </div>
 `;
 
-exports[`Order.tsx render order with not empty items 1`] = `
+exports[`Order.tsx should call getDate on render with not empty items 1`] = `
 <div
   className="Order"
 >

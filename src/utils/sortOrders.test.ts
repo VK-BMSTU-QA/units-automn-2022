@@ -1,7 +1,7 @@
 import {sortOrders, getSortFunction, sortTypes, sortByItemCount, sortByDate} from './sortOrders';
 
 describe('sortOrders function', ()=>{
-	it('compare function call test', () => {
+	it('shoud call compare function', () => {
 		const orders = [
 			{items: ['a', 'b', 'c']},
 			{items: ['a', 'b']},
@@ -13,23 +13,27 @@ describe('sortOrders function', ()=>{
 		expect(sortFunc).toBeCalled();
 	});
 
-	it('undefined test', () => {
+	it('should return undefined if there are no orders', () => {
 		const orders = undefined;
 
-		const sortFunc = jest.fn();
+		const sortFunc = jest.fn((x, y) => x > y ? 1 : x < y ? -1 : 0);
 		const res = sortOrders(orders, sortFunc);
 		expect(res).toBeUndefined();
 	});
 });
 
 describe('getSortFunction function', () => {
-	it('sortByItemsCount', () => {
+	it('should return sortByItemsCount', () => {
 		const sort = getSortFunction(sortTypes.COUNT);
 		expect(sort).toBe(sortByItemCount);
 	});
-	it('sortByDate', () => {
+	it('should return sortByDate', () => {
 		const sort = getSortFunction(sortTypes.DATE);
 		expect(sort).toBe(sortByDate);
+	});
+	it('should return null', () => {
+		const sort = getSortFunction("some string");
+		expect(sort).toBe(null);
 	});
 });
 
