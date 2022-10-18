@@ -32,7 +32,7 @@ describe('getSortFunction function', () => {
 		expect(sort).toBe(sortByDate);
 	});
 	it('should return null', () => {
-		const sort = getSortFunction("some string");
+		const sort = getSortFunction('some string');
 		expect(sort).toBe(null);
 	});
 });
