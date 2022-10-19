@@ -31,16 +31,25 @@ describe('Order.tsx', () => {
 	});
 
 	it('should call getDate on render with not empty items', () => {
-		const order = fakeOrders[1];
+		const order = {
+			id: 123,
+			date: 1544356800000,
+			shop: 'Alihandro Express',
+			items: [
+				'Утиный пластмасса для показ новый год',
+				'Курица из нержавеющей стали, утка, гусь, голубь, питьевой фонтан',
+				'Новый стиль один розница яйцо для упаковки форма латекс',
+			]
+		};
 
 		const wrapper = shallow(<OrderComponent order={order}/>);
 		expect(wrapper).toMatchSnapshot();
-		expect(getDate).toBeCalled();
+		expect(getDate).toBeCalledWith(order.date);
 	});
 
 	test.each([
-		{id: 0, date: 5, shop: undefined, items:[]},
-		{id: 0, date: undefined, shop: 'myShop', items:[]},
+		{id: 0, date: 5, items:[]},
+		{id: 0, shop: 'myShop', items:[]},
 	])('Проверка невалидного компонента OrderComponent({order: %s})', (order) => {
 		const wrapper = shallow(<OrderComponent order = {order} />);
 		expect(wrapper.find('.Order')).toHaveLength(0);
