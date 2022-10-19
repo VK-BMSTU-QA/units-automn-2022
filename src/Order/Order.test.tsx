@@ -13,7 +13,7 @@ describe('Order.tsx', () => {
 	});
 
 	afterEach(() => {
-		 jest.clearAllMocks();
+		jest.clearAllMocks();
 	});
 
 	it('should return null order', () => {
