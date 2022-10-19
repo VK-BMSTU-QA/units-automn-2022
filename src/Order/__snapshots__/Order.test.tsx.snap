@@ -14,9 +14,7 @@ exports[`Order.tsx should render completely filled order, and should call getDat
     </span>
     <span
       id="date"
-    >
-      14 мая, сб, 2022 год
-    </span>
+    />
   </div>
   <div
     className="Order-items"
@@ -57,9 +55,7 @@ exports[`Order.tsx should render order with empty items, and should call getDate
     </span>
     <span
       id="date"
-    >
-      14 мая, сб, 2022 год
-    </span>
+    />
   </div>
   <div
     className="Order-items"

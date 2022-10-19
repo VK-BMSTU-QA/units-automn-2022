@@ -10,13 +10,6 @@ jest.mock('../utils/getDate');
 configure({ adapter: new Adapter() });
 
 describe('Order.tsx', () => {
-	beforeEach(() => {
-		(getDate as jest.Mock).mockReturnValue('14 мая, сб, 2022 год');
-	});
-
-	afterEach(() => {
-		jest.clearAllMocks();
-	});
 
 	test.each([
 		['completely filled order', {
