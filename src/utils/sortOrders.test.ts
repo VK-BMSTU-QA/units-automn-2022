@@ -44,13 +44,24 @@ describe('sortByItemDate function', () => {
 });
 
 describe('sortOrders function', () => {
+	it('shoud call compare function', () => {
+		const orders = [
+			{items: ['1', '2', '3']},
+			{items: ['4', '5']},
+			{items: ['6']}
+		];
+
+		const sortFunc = jest.fn();
+		sortOrders(orders, sortFunc);
+		expect(sortFunc).toBeCalled();
+	});
+
 	test.each([
-		{ orders: undefined, sortFunction: sortByDate, expected: undefined },
-		{ orders: undefined, sortFunction: sortByItemCount, expected: undefined },
-		{ orders: [], sortFunction: sortByDate, expected: undefined },
-		{ orders: [], sortFunction: sortByItemCount, expected: undefined },
+		{ orders: undefined, sortFunction: jest.fn(), expected: undefined },
+		{ orders: [], sortFunction: jest.fn(), expected: undefined },
 	])('Testing sort function %s', ({ orders, sortFunction, expected }) => {
 		expect(sortOrders(orders!, sortFunction)).toBe(expected);
+		expect(sortFunction).not.toBeCalled();
 	});
 
 });
