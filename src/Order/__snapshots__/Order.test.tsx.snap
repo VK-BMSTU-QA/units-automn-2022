@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Order.tsx should call getDate on render with empty items 1`] = `
+<div
+  className="Order"
+>
+  <div
+    className="Order-header"
+  >
+    <span
+      className="Order-shop"
+    >
+      Сбереги Мега Маркер
+    </span>
+    <span
+      id="date"
+    >
+      13 октября, чт, 2022 год
+    </span>
+  </div>
+  <div
+    className="Order-items"
+  >
+    <div>
+      Заказ пуст...
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Order.tsx should call getDate on render with not empty items 1`] = `
+<div
+  className="Order"
+>
+  <div
+    className="Order-header"
+  >
+    <span
+      className="Order-shop"
+    >
+      Alihandro Express
+    </span>
+    <span
+      id="date"
+    >
+      13 октября, чт, 2022 год
+    </span>
+  </div>
+  <div
+    className="Order-items"
+  >
+    <div
+      className="Order-item"
+      key="0"
+    >
+      Утиный пластмасса для показ новый год
+    </div>
+    <div
+      className="Order-item"
+      key="1"
+    >
+      Курица из нержавеющей стали, утка, гусь, голубь, питьевой фонтан
+    </div>
+    <div
+      className="Order-item"
+      key="2"
+    >
+      Новый стиль один розница яйцо для упаковки форма латекс
+    </div>
+  </div>
+</div>
+`;
