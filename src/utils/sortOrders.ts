@@ -1,8 +1,6 @@
 // Array sort doc
 // @see https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#Description
 
-import {Order} from '../data/fakeOrders';
-
 export const sortTypes = {
 	DATE: 'date',
 	COUNT: 'count',

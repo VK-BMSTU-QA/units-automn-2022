@@ -3,7 +3,6 @@ import {OrderComponent} from './Order';
 import Adapter from 'enzyme-adapter-react-16';
 import {getDate} from '../utils/getDate';
 import {shallow, configure} from 'enzyme';
-import { fakeOrders } from '../data/fakeOrders';
 
 jest.mock('../utils/getDate');
 

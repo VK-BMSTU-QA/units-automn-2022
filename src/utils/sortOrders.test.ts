@@ -1,9 +1,4 @@
-import {sortOrders} from './sortOrders';
-import {sortByItemCount} from './sortOrders';
-import {sortByDate} from './sortOrders';
-import {getSortFunction} from './sortOrders';
-import {sortTypes} from './sortOrders';
-import {Order} from '../data/fakeOrders';
+import {sortOrders, sortByItemCount, sortByDate, getSortFunction, sortTypes} from './sortOrders';
 import {fakeOrders} from '../data/fakeOrders';
 
 describe('sortByItemCount function', () => {
@@ -21,8 +16,6 @@ describe('sortByItemCount function', () => {
 		expect(result).toBe(0);
 	});
 });
-
-// My tests
 
 describe('sortByItemCount function', () => {
 	it('should sort two empty orders', () => {
@@ -42,6 +35,7 @@ describe('sortByItemCount function', () => {
 		expect(sortByItemCount(a, b)).toBe(expected);
 	});
 
+	// should sort defined order
 	test.each([
 		[{items: ['item1'],}, {items: ['item1', 'item2'],}, -1],
 		[{items: ['item1', 'item2'],}, {items: ['item1', 'item2'],}, 0],
@@ -69,6 +63,7 @@ describe('sortByDate function', () => {
 		expect(sortByDate(a, b)).toBe(expected);
 	});
 
+	// should sort order with non-zero date
 	test.each([
 		[{date: 5,}, {date: 6,}, 1],
 		[{date: 100,}, {date: 50,}, -1],
