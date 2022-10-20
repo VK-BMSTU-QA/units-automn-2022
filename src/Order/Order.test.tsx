@@ -11,12 +11,7 @@ configure({ adapter: new Adapter() });
 
 describe('Order component', () => {
 	let wrapper;
-
-	// Create mock before tests
-	beforeEach(() => {
-		(getDate as jest.Mock);
-	});
-
+	
 	// Clear mocks after tests
 	afterEach(() => {
 		jest.clearAllMocks();
