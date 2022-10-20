@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Order component should render order with empty items and call "getDate" function 1`] = `
+<div
+  className="Order"
+>
+  <div
+    className="Order-header"
+  >
+    <span
+      className="Order-shop"
+    >
+      Сбереги Мега Маркер
+    </span>
+    <span
+      id="date"
+    />
+  </div>
+  <div
+    className="Order-items"
+  >
+    <div>
+      Заказ пуст...
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Order component should render order with items 1`] = `
+<div
+  className="Order"
+>
+  <div
+    className="Order-header"
+  >
+    <span
+      className="Order-shop"
+    >
+      Alihandro Express
+    </span>
+    <span
+      id="date"
+    />
+  </div>
+  <div
+    className="Order-items"
+  >
+    <div
+      className="Order-item"
+      key="0"
+    >
+      Утиный пластмасса для показ новый год
+    </div>
+    <div
+      className="Order-item"
+      key="1"
+    >
+      Курица из нержавеющей стали, утка, гусь, голубь, питьевой фонтан
+    </div>
+    <div
+      className="Order-item"
+      key="2"
+    >
+      Новый стиль один розница яйцо для упаковки форма латекс
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Order component should render order with undefined items 1`] = `
+<div
+  className="Order"
+>
+  <div
+    className="Order-header"
+  >
+    <span
+      className="Order-shop"
+    >
+      shop
+    </span>
+    <span
+      id="date"
+    />
+  </div>
+  <div
+    className="Order-items"
+  >
+    <div>
+      Заказ пуст...
+    </div>
+  </div>
+</div>
+`;
