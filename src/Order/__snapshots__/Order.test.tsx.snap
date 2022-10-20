@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Order.tsx should render empty order 1`] = `
+<div
+  className="Order"
+>
+  <div
+    className="Order-header"
+  >
+    <span
+      className="Order-shop"
+    >
+      Сбереги Мега Маркер
+    </span>
+    <span
+      id="date"
+    />
+  </div>
+  <div
+    className="Order-items"
+  >
+    <div>
+      Заказ пуст...
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Order.tsx should render filled order 1`] = `
+<div
+  className="Order"
+>
+  <div
+    className="Order-header"
+  >
+    <span
+      className="Order-shop"
+    >
+      Lamodник.ru
+    </span>
+    <span
+      id="date"
+    />
+  </div>
+  <div
+    className="Order-items"
+  >
+    <div
+      className="Order-item"
+      key="0"
+    >
+      Жакет - BOREAL5
+    </div>
+    <div
+      className="Order-item"
+      key="1"
+    >
+      Miss Gabby Костюм
+    </div>
+    <div
+      className="Order-item"
+      key="2"
+    >
+      Ostin перчатки мужские
+    </div>
+    <div
+      className="Order-item"
+      key="3"
+    >
+      Zara худи роз.
+    </div>
+  </div>
+</div>
+`;
