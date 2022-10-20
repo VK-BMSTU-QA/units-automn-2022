@@ -8,9 +8,6 @@ import { getDate } from '../utils/getDate';
 configure({ adapter: new Adapter() });
 
 describe('Order.tsx', () => {
-	beforeEach(() => {
-		(getDate as jest.Mock);
-	});
 
 	afterEach(() => {
 		jest.clearAllMocks();
